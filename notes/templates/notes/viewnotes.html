@@ -1,0 +1,25 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+{% block content %}
+{{ error }}
+<head>
+    <link rel="stylesheet" href="{% static 'notes/master.css' %}">
+</head>
+<body>
+    <div class="create-note-page">
+
+        
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Title" value="{{ notes.title }}" class="titlefield">
+            <textarea name="description" id="descriptionfield" rows="17"  placeholder="Notes"class="descriptionfield">{{ notes.description }}</textarea>
+            <input type="checkbox" checked="{{ notes.important }}"  name="important" class="importantfield"> Important
+            <br>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <form action="{% url 'deletenote' notes.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit"  class="btn btn-primary" >delete</button></form>
+        </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,19 @@
+
+
+{{ error }}
+
+{% block content %}<h1>home</h1>
+
+{% for note in notes %}
+<a href="{% url 'viewnotes' note.id %}">
+
+    
+    {{ note.title }} -
+    {{note.dateedited}} -
+    {{note.important}} - {{note.description|safe}}
+</a>
+<br>
+
+{% endfor %}
+
+{% block content1 %}{% endblock %}

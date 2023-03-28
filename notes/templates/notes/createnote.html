@@ -1,0 +1,23 @@
+{% extends 'notes/base.html'%}
+{% block content %}
+{% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'notes/master.css' %}">
+</head>
+<body>
+    <div class="create-note-page">
+
+        
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Title" class="titlefield">
+            <textarea name="description" id="descriptionfield" rows="17" placeholder="Notes"class="descriptionfield"></textarea>
+            <input type="checkbox" name="important" class="importantfield"> Important
+            <br>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</body>
+{% endblock %}

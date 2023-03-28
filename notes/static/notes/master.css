@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+:root{
+    font-size: 16px;
+    font-family: 'JetBrains Mono', monospace;
+}    
+.title {
+    font-size: 1.7rem;
+}
+.navbar {
+    margin-bottom: 2%;
+}
+.dateedited {
+    margin-bottom: 1rem;
+
+    color: #5d5d5d;
+}
+
+.important {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.important>img {
+    width: 1.5rem;
+}
+
+.notes-block>a {
+    text-decoration: none;
+    padding: 1rem;
+    color: #080808;
+    height: 25rem;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.imp,
+.notimp {
+    width: 1rem;
+    height: 1rem;
+}
+
+.imp {
+    background-color: red;
+}
+
+.notimp {
+    border: 1px solid grey;
+}
+
+.notes-block {
+    display: grid;
+    grid-template-columns: repeat(3, 25rem);
+    /* place-items: center; */
+    gap: 1rem;
+}
+
+.parent-notes-block {
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    .notes-block {
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        /* place-items: center; */
+        gap: 1rem;
+    }
+
+    .notes-block>a {
+        height: 20rem;
+    }
+}
+
+    /* Media Query for low resolution  Tablets, Ipads */
+    @media (min-width: 600px) and (max-width: 900px) {
+    .notes-block {
+        display: grid;
+        grid-template-columns: repeat(1, 25rem);
+        /* place-items: center; */
+        gap: 1rem;
+    }
+
+    .notes-block>a {
+        height: 25rem;
+    }
+    }
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 900px) and (max-width: 1100px) {
+
+.notes-block {
+display: grid;
+grid-template-columns: repeat(2, 20rem);
+/* place-items: center; */
+gap: 1rem;
+}
+
+.notes-block>a {
+height: 20rem;
+}
+} @media (min-width: 1100px) and (max-width: 1400px) {
+
+.notes-block {
+display: grid;
+grid-template-columns: repeat(2, 25rem);
+/* place-items: center; */
+gap: 1rem;
+}
+
+.notes-block>a {
+height: 25rem;
+}
+} @media (min-width: 1400px) {
+
+.notes-block {
+display: grid;
+grid-template-columns: repeat(3, 25rem);
+/* place-items: center; */
+gap: 1rem;
+}
+
+.notes-block>a {
+height: 25rem;
+}
+}
+.create-btn {
+
+bottom: 7%;
+right: 5%;
+position: fixed;
+}
+
+.create-btn>a>img {
+width: 2.5rem;
+}
+
+
+
+/* create note page  */
+.titlefield , .descriptionfield, .title:focus, .descriptionfield:focus {
+    border: none;
+    outline: none;
+}
+
+.create-note-page {
+    height: 100vh;
+}
+.titlefield {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.descriptionfield {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+.importantfield {
+    margin: 1rem 1rem 1rem 0;
+}
+.create-note-page > form > .btn {
+    margin: 1rem 1rem 1rem 0;
+
+}
+
+.centerInParent {
+    height: 60vh;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+.signupform {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+}
+.signupform > input,h2 {
+    margin: .5rem;
+    padding: .3rem;
+}
+.signupform > button {
+    margin: 1rem .5rem;
+    width: 5rem;
+}

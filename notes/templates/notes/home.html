@@ -1,0 +1,48 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'notes/master.css' %}">
+</head>
+<body>
+    
+    <div class="parent-notes-block">
+        <div class="notes-block">
+            {% for note in notes %}
+
+        <a href="{% url 'viewnotes' note.id %}">
+            <div class="title">
+                {{ note.title|truncatechars:50 }}
+            </div>
+            <div class="dateedited">
+                
+                {{note.dateedited|date:'d M H:m'}}
+            </div>
+            <div class="description">
+                {{note.description|safe|truncatechars:200}}
+            </div>
+            <div class="important">
+                {% if note.important %}
+                <img src="{% static 'notes/liked.png' %}">
+                
+                {% else %}
+
+                
+                <img src="{% static 'notes/unliked.png' %}">
+                {% endif %}
+            </div>
+        </a>
+
+        {% endfor %}
+    </div>
+    <div class="create-btn">
+  
+      <a class="nav-link" href="{% url 'createnote' %}">
+  
+        <img src="{% static 'notes/create.png' %}" alt="create">
+      </a>
+    </div>
+</div>
+</body>
+{% endblock %}
